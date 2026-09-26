@@ -1,0 +1,187 @@
+# Bengali (Bangladesh) translation for Rabeya Furniture & Doors theme
+# This file is distributed under the same license as the theme.
+msgid ""
+msgstr ""
+"Project-Id-Version: Rabeya Furniture & Doors 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/tanvir-hasan11/rabeya-furniture-doors\n"
+"POT-Creation-Date: 2026-09-27 00:00+0600\n"
+"PO-Revision-Date: 2026-09-27 00:00+0600\n"
+"Last-Translator: Tanvir Hasan\n"
+"Language-Team: Bengali (Bangladesh)\n"
+"Language: bn_BD\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: manual\n"
+"X-Domain: rabeya\n"
+
+#. Theme Name of the theme
+msgid "Rabeya Furniture & Doors"
+msgstr "রাবেয়া ফার্নিচার অ্যান্ড ডোরস"
+
+#: header.php
+msgid "Free delivery inside Dhaka on orders over 20,000 BDT"
+msgstr "২০,০০০ টাকার উপরে অর্ডারে ঢাকার ভিতরে ফ্রি ডেলিভারি"
+
+#: header.php
+msgid "Call: +880 1XXX-XXXXXX"
+msgstr "কল: +৮৮০ ১XXX-XXXXXX"
+
+#: header.php
+msgid "Skip to content"
+msgstr "মূল কন্টেন্টে যান"
+
+#: header.php
+msgid "Primary menu"
+msgstr "প্রধান মেনু"
+
+#: header.php
+msgid "Menu"
+msgstr "মেনু"
+
+#: header.php
+msgid "View cart"
+msgstr "কার্ট দেখুন"
+
+#: functions.php
+msgid "Primary Menu"
+msgstr "প্রধান মেনু"
+
+#: functions.php
+msgid "Footer Menu"
+msgstr "ফুটার মেনু"
+
+#: functions.php
+msgid "Shop Sidebar"
+msgstr "শপ সাইডবার"
+
+#: functions.php
+msgid "Footer Widgets"
+msgstr "ফুটার উইজেট"
+
+#: front-page.php
+msgid "Since 1998"
+msgstr "১৯৯৮ সাল থেকে"
+
+#: front-page.php
+msgid "Furniture and doors that make a house a home"
+msgstr "যে ফার্নিচার ও দরজা ঘরকে বানায় আপন"
+
+#: front-page.php
+msgid "Seasoned teak, mahogany and garjan wood. Custom sizes for every door and every room."
+msgstr "পরিপক্ক সেগুন, মেহগনি ও গর্জন কাঠ। প্রতিটি দরজা ও ঘরের জন্য কাস্টম সাইজ।"
+
+#: front-page.php
+msgid "Shop collection"
+msgstr "কালেকশন দেখুন"
+
+#: front-page.php
+msgid "Browse categories"
+msgstr "ক্যাটাগরি ব্রাউজ করুন"
+
+#: front-page.php
+msgid "Custom doors"
+msgstr "কাস্টম দরজা"
+
+#: front-page.php
+msgid "Made to measure"
+msgstr "মাপ অনুযায়ী তৈরি"
+
+#: front-page.php
+msgid "25+ Years"
+msgstr "২৫+ বছর"
+
+#: front-page.php
+msgid "Of craftsmanship"
+msgstr "দক্ষ কারিগরির"
+
+#: front-page.php
+msgid "Free Delivery"
+msgstr "ফ্রি ডেলিভারি"
+
+#: front-page.php
+msgid "Inside Dhaka"
+msgstr "ঢাকার ভিতরে"
+
+#: front-page.php
+msgid "Custom Size"
+msgstr "কাস্টম সাইজ"
+
+#: front-page.php
+msgid "Doors and furniture"
+msgstr "দরজা ও ফার্নিচার"
+
+#: front-page.php
+msgid "5 Year Warranty"
+msgstr "৫ বছরের ওয়ারেন্টি"
+
+#: front-page.php
+msgid "On all wooden items"
+msgstr "সব কাঠের পণ্যে"
+
+#: front-page.php
+msgid "Shop by category"
+msgstr "ক্যাটাগরি অনুযায়ী কিনুন"
+
+#: front-page.php
+msgid "From solid wood doors to complete living room sets."
+msgstr "সলিড কাঠের দরজা থেকে সম্পূর্ণ লিভিং রুম সেট।"
+
+#: front-page.php
+msgid "Featured pieces"
+msgstr "ফিচার্ড পণ্য"
+
+#: front-page.php
+msgid "Best selling furniture and doors this season."
+msgstr "এই সিজনের বেস্ট সেলিং ফার্নিচার ও দরজা।"
+
+#: front-page.php
+msgid "Need a custom door size?"
+msgstr "কাস্টম মাপের দরজা দরকার?"
+
+#: front-page.php
+msgid "Send us your measurements and we will craft it to fit perfectly."
+msgstr "আপনার মাপ আমাদের পাঠান, আমরা নিখুঁতভাবে তৈরি করে দেব।"
+
+#: front-page.php
+msgid "Request a quote"
+msgstr "কোটেশন চান"
+
+#: front-page.php
+msgid "Add product categories in WooCommerce to see them here."
+msgstr "এখানে দেখতে WooCommerce-এ প্রোডাক্ট ক্যাটাগরি যোগ করুন।"
+
+#: footer.php
+msgid "Handcrafted furniture and doors made with seasoned wood, built to last for generations."
+msgstr "পরিপক্ক কাঠে হাতে তৈরি ফার্নিচার ও দরজা, প্রজন্মের পর প্রজন্ম টিকবে।"
+
+#: footer.php
+msgid "Shop"
+msgstr "শপ"
+
+#: footer.php
+msgid "Contact"
+msgstr "যোগাযোগ"
+
+#: footer.php
+msgid "Showroom: Dhaka, Bangladesh"
+msgstr "শোরুম: ঢাকা, বাংলাদেশ"
+
+#: footer.php
+msgid "All rights reserved."
+msgstr "সর্বস্বত্ব সংরক্ষিত।"
+
+#: index.php
+msgid "Nothing found."
+msgstr "কিছু পাওয়া যায়নি।"
+
+#: index.php
+msgid "%s product"
+msgid_plural "%s products"
+msgstr[0] "%s টি পণ্য"
+msgstr[1] "%s টি পণ্য"
+
+#: header.php
+msgid "View cart"
+msgstr "কার্ট দেখুন"
