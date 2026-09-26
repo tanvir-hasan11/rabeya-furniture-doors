@@ -1,0 +1,180 @@
+/* ==========================================================================
+   Rabeya - shop / category archive styles
+   ========================================================================== */
+
+/* Banner ----------------------------------------------------------------- */
+.shop-banner {
+  background: linear-gradient(160deg, var(--cream, #faf6f1) 0%, #f2e7db 100%);
+  padding: 46px 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.shop-banner.has-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(31, 26, 23, 0.82), rgba(31, 26, 23, 0.45));
+}
+
+.shop-banner-inner { position: relative; z-index: 2; }
+
+.shop-breadcrumb {
+  font-size: 13px;
+  color: var(--ink-soft, #5b4f46);
+  margin-bottom: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.shop-breadcrumb a { color: var(--wood-dark, #6b4320); }
+
+.shop-banner.has-image .shop-breadcrumb,
+.shop-banner.has-image .shop-breadcrumb a { color: #e7d8c8; }
+
+.shop-title {
+  margin: 0 0 8px;
+  font-size: clamp(26px, 3.6vw, 42px);
+  line-height: 1.15;
+}
+
+.shop-banner.has-image .shop-title { color: #fff; }
+
+.shop-description {
+  max-width: 62ch;
+  color: var(--ink-soft, #5b4f46);
+}
+
+.shop-banner.has-image .shop-description { color: #e4dbd2; }
+
+.shop-description p { margin: 0 0 8px; }
+
+/* Subcategory chips ------------------------------------------------------ */
+.subcategory-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 26px auto 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--line, #e7ded4);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink, #1f1a17);
+  font-size: 14px;
+  font-weight: 600;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.chip span {
+  background: var(--cream, #faf6f1);
+  color: var(--ink-soft, #5b4f46);
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 12px;
+}
+
+.chip:hover {
+  border-color: var(--wood, #8a5a2b);
+  background: var(--wood, #8a5a2b);
+  color: #fff;
+}
+
+.chip:hover span { background: rgba(255, 255, 255, 0.2); color: #fff; }
+
+/* Toolbar ---------------------------------------------------------------- */
+.shop-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 24px 0 26px;
+  padding: 14px 20px;
+  border: 1px solid var(--line, #e7ded4);
+  border-radius: var(--radius, 14px);
+  background: #fff;
+}
+
+.shop-toolbar .woocommerce-result-count {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-soft, #5b4f46);
+}
+
+.shop-toolbar .woocommerce-ordering { margin: 0; }
+
+.shop-toolbar .woocommerce-ordering select {
+  padding: 9px 14px;
+  border: 1px solid var(--line, #e7ded4);
+  border-radius: 999px;
+  background: var(--cream, #faf6f1);
+  font-size: 14px;
+  color: var(--ink, #1f1a17);
+  cursor: pointer;
+}
+
+/* Grid ------------------------------------------------------------------- */
+.woocommerce ul.products {
+  margin-bottom: 0 !important;
+}
+
+.woocommerce nav.woocommerce-pagination {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+  border: 0;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+  border: 0;
+  margin: 0;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+  min-width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line, #e7ded4);
+  border-radius: 10px;
+  color: var(--ink, #1f1a17);
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:hover {
+  background: var(--cream, #faf6f1);
+  border-color: var(--wood, #8a5a2b);
+  color: var(--wood-dark, #6b4320);
+}
+
+.woocommerce nav.woocommerce-pagination ul li span.current {
+  background: var(--wood, #8a5a2b);
+  border-color: var(--wood, #8a5a2b);
+  color: #fff;
+}
+
+/* No products ------------------------------------------------------------ */
+.woocommerce-no-products-found {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--ink-soft, #5b4f46);
+}
+
+@media (max-width: 640px) {
+  .shop-banner { padding: 34px 0; }
+  .shop-toolbar { flex-direction: column; align-items: stretch; }
+}
