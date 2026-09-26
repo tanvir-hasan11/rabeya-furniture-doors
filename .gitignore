@@ -1,0 +1,20 @@
+# WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Node (if tooling is added later)
+node_modules/
+dist/
+
+# Environment
+.env
+*.local
