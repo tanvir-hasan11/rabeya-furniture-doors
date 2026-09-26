@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Rabeya - product page customisation styles
+   ========================================================================== */
+
+.product-specs {
+  margin: 28px 0;
+  border: 1px solid var(--line, #e7ded4);
+  border-radius: var(--radius, 14px);
+  overflow: hidden;
+  background: #fff;
+}
+
+.product-specs-title {
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 18px;
+  background: var(--cream, #faf6f1);
+  border-bottom: 1px solid var(--line, #e7ded4);
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--line, #e7ded4);
+  font-size: 15px;
+}
+
+.specs-table tr:last-child th,
+.specs-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.specs-table th {
+  width: 38%;
+  font-weight: 600;
+  color: var(--ink-soft, #5b4f46);
+  background: #fdfbf9;
+}
+
+.specs-table td {
+  color: var(--ink, #1f1a17);
+}
+
+/* Trust badges ----------------------------------------------------------- */
+.product-badges {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.product-badges li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 15px;
+  color: var(--ink-soft, #5b4f46);
+}
+
+.product-badges li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  background: var(--wood, #8a5a2b);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+/* Custom size notice ----------------------------------------------------- */
+.custom-size-note {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  background: #fdf6ee;
+  border-left: 3px solid var(--wood, #8a5a2b);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--wood-dark, #6b4320);
+}
+
+/* Single product layout tweaks ------------------------------------------- */
+.woocommerce div.product .summary {
+  padding-top: 8px;
+}
+
+.woocommerce div.product .product_title {
+  margin-bottom: 10px;
+}
+
+.woocommerce div.product p.price {
+  color: var(--wood-dark, #6b4320);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  padding: 0;
+  margin: 0 0 24px;
+  border-bottom: 1px solid var(--line, #e7ded4);
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+  padding: 12px 18px;
+  font-weight: 600;
+  color: var(--ink, #1f1a17);
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+  color: var(--wood-dark, #6b4320);
+  box-shadow: inset 0 -2px 0 var(--wood, #8a5a2b);
+}
+
+.woocommerce div.product .woocommerce-tabs .panel {
+  border: 1px solid var(--line, #e7ded4);
+  border-radius: var(--radius, 14px);
+  padding: 24px;
+  background: #fff;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel h3 {
+  margin-top: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel ul {
+  padding-left: 20px;
+}
