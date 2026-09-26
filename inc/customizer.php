@@ -83,21 +83,22 @@ function rabeya_customize_register( $wp_customize ) {
 
 	for ( $i = 1; $i <= 4; $i++ ) {
 		$fields = array(
-			"rabeya_slide_{$i}_eyebrow"     => __( 'Eyebrow text', 'rabeya' ),
-			"rabeya_slide_{$i}_title"       => __( 'Title', 'rabeya' ),
-			"rabeya_slide_{$i}_text"        => __( 'Description', 'rabeya' ),
-			"rabeya_slide_{$i}_button_text" => __( 'Button text', 'rabeya' ),
-			"rabeya_slide_{$i}_button_url"  => __( 'Button URL', 'rabeya' ),
+			"rabeya_slide_{$i}_eyebrow"     => array( 'label' => __( 'Eyebrow text', 'rabeya' ), 'sanitize' => 'sanitize_text_field' ),
+			"rabeya_slide_{$i}_title"       => array( 'label' => __( 'Title', 'rabeya' ), 'sanitize' => 'sanitize_text_field' ),
+			"rabeya_slide_{$i}_text"        => array( 'label' => __( 'Description', 'rabeya' ), 'sanitize' => 'sanitize_text_field' ),
+			"rabeya_slide_{$i}_button_text" => array( 'label' => __( 'Button text', 'rabeya' ), 'sanitize' => 'sanitize_text_field' ),
+			"rabeya_slide_{$i}_button_url"  => array( 'label' => __( 'Button URL', 'rabeya' ), 'sanitize' => 'esc_url_raw' ),
 		);
 
-		foreach ( $fields as $setting => $label ) {
+		foreach ( $fields as $setting => $field ) {
 			$wp_customize->add_setting( $setting, array(
 				'default'           => '',
-				'sanitize_callback' => 'rabeya_slide_{$i}_button_url' === $setting ? 'esc_url_raw' : 'sanitize_text_field',
+				'sanitize_callback' => $field['sanitize'],
 				'transport'         => 'refresh',
 			) );
 			$wp_customize->add_control( $setting, array(
-				'label'   => sprintf( __( 'Slide %1$d - %2$s', 'rabeya' ), $i, $label ),
+				/* translators: 1: slide number, 2: field label. */
+				'label'   => sprintf( __( 'Slide %1$d - %2$s', 'rabeya' ), $i, $field['label'] ),
 				'section' => 'rabeya_slider',
 				'type'    => 'text',
 			) );
@@ -111,6 +112,7 @@ function rabeya_customize_register( $wp_customize ) {
 			$wp_customize,
 			"rabeya_slide_{$i}_image",
 			array(
+				/* translators: %d: slide number. */
 				'label'   => sprintf( __( 'Slide %d - background image', 'rabeya' ), $i ),
 				'section' => 'rabeya_slider',
 			)
