@@ -62,6 +62,28 @@ get_template_part( 'template-parts/slider' );
 </section>
 <?php endif; ?>
 
+<?php $notices = rabeya_latest_notices( 3 ); ?>
+<?php if ( $notices ) : ?>
+<section class="home-notices">
+	<div class="container">
+		<header class="section-head">
+			<h2><?php esc_html_e( 'News & Notices', 'rabeya' ); ?></h2>
+			<p><?php esc_html_e( 'Latest offers and updates from our workshop.', 'rabeya' ); ?></p>
+		</header>
+		<div class="notice-grid">
+			<?php foreach ( $notices as $notice ) : ?>
+				<article class="notice-card">
+					<time class="post-date" datetime="<?php echo esc_attr( get_the_date( DATE_W3C, $notice ) ); ?>"><?php echo esc_html( get_the_date( '', $notice ) ); ?></time>
+					<h3><a href="<?php echo esc_url( get_permalink( $notice ) ); ?>"><?php echo esc_html( get_the_title( $notice ) ); ?></a></h3>
+					<p><?php echo esc_html( wp_trim_words( get_the_excerpt( $notice ), 18 ) ); ?></p>
+					<a class="post-more" href="<?php echo esc_url( get_permalink( $notice ) ); ?>"><?php esc_html_e( 'Read more', 'rabeya' ); ?> &rarr;</a>
+				</article>
+			<?php endforeach; ?>
+		</div>
+	</div>
+</section>
+<?php endif; ?>
+
 <section class="section cta">
 	<div class="container cta-inner">
 		<div>

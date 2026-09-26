@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Rabeya - notice bar + blog styles
+   ========================================================================== */
+
+/* Notice bar ------------------------------------------------------------- */
+.notice-bar {
+  background: var(--wood, #8a5a2b);
+  color: #fff;
+  font-size: 14px;
+}
+
+.notice-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.notice-bar-icon { color: #ffe3bd; }
+.notice-bar a { color: #fff; text-decoration: underline; }
+.notice-bar a:hover { color: #ffe3bd; }
+
+/* Blog archive ----------------------------------------------------------- */
+.blog-archive .page-sub {
+  color: var(--ink-soft, #5b4f46);
+  margin: 6px 0 0;
+}
+
+.post-date {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--wood-dark, #6b4320);
+  margin-bottom: 6px;
+}
+
+.post-excerpt p { margin: 0 0 12px; color: var(--ink-soft, #5b4f46); }
+
+.post-more {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--wood-dark, #6b4320);
+}
+
+.post-more:hover { color: var(--wood, #8a5a2b); }
+
+/* Single post ------------------------------------------------------------ */
+.single-post .entry-content {
+  max-width: 780px;
+  font-size: 17px;
+}
+
+.single-post .entry-content h2,
+.single-post .entry-content h3 { margin-top: 1.4em; }
+
+.single-post .entry-content img { border-radius: var(--radius, 14px); }
+
+.single-post .entry-content blockquote {
+  margin: 24px 0;
+  padding: 16px 22px;
+  border-left: 4px solid var(--wood, #8a5a2b);
+  background: var(--cream, #faf6f1);
+  border-radius: 8px;
+  color: var(--ink-soft, #5b4f46);
+}
+
+.post-cats { display: flex; gap: 8px; flex-wrap: wrap; }
+.post-cats a {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--cream, #faf6f1);
+  border-radius: 999px;
+  padding: 4px 12px;
+  color: var(--wood-dark, #6b4320);
+}
+
+.entry-footer { margin-top: 30px; }
+.post-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.post-tags a {
+  font-size: 13px;
+  border: 1px solid var(--line, #e7ded4);
+  border-radius: 999px;
+  padding: 4px 12px;
+  color: var(--ink-soft, #5b4f46);
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 780px;
+  margin: 40px 0 10px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line, #e7ded4);
+  font-weight: 600;
+}
+
+.post-nav-next { text-align: right; }
+
+/* Homepage notice strip -------------------------------------------------- */
+.home-notices { padding: 70px 0; background: var(--cream, #faf6f1); }
+
+.home-notices .notice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.notice-card {
+  background: #fff;
+  border: 1px solid var(--line, #e7ded4);
+  border-radius: var(--radius, 14px);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.notice-card:hover { transform: translateY(-4px); box-shadow: var(--shadow, 0 18px 40px rgba(31,26,23,0.08)); }
+
+.notice-card h3 { margin: 0; font-size: 20px; }
+.notice-card h3 a { color: var(--ink, #1f1a17); }
+.notice-card p { margin: 0; color: var(--ink-soft, #5b4f46); font-size: 15px; }
+
+@media (max-width: 1024px) {
+  .home-notices .notice-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .home-notices .notice-grid { grid-template-columns: 1fr; }
+  .post-nav { flex-direction: column; }
+  .post-nav-next { text-align: left; }
+}
