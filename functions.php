@@ -16,6 +16,7 @@ require get_template_directory() . '/inc/product-specs.php';
 require get_template_directory() . '/inc/shop.php';
 require get_template_directory() . '/inc/notice.php';
 require get_template_directory() . '/inc/reviews.php';
+require get_template_directory() . '/inc/premium.php';
 
 function rabeya_setup() {
 	load_theme_textdomain( 'rabeya', get_template_directory() . '/languages' );
