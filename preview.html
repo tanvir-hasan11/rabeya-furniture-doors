@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rabeya Furniture &amp; Doors — Theme Preview</title>
+<style>
+:root{--ink:#1f1a17;--ink-soft:#5b4f46;--wood:#8a5a2b;--wood-dark:#6b4320;--cream:#faf6f1;--line:#e7ded4;--radius:14px;--shadow:0 18px 40px rgba(31,26,23,.08)}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--ink);line-height:1.65;background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--wood-dark);text-decoration:none}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;margin:0 0 .5em}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15px}
+.btn-primary{background:var(--wood);color:#fff}
+.btn-ghost{border:2px solid var(--ink);color:var(--ink)}
+.section{padding:70px 0}
+.section-head{text-align:center;max-width:640px;margin:0 auto 40px}
+.section-head h2{font-size:clamp(26px,3vw,38px)}
+.section-head p{color:var(--ink-soft);margin:0}
+.eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:12px;color:var(--wood-dark);font-weight:700;margin:0 0 14px}
+
+/* demo banner */
+.demo-bar{background:#1f1a17;color:#f0d9bd;font-size:13px;padding:10px 20px;text-align:center}
+.demo-bar strong{color:#fff}
+
+/* topbar */
+.topbar{background:var(--ink);color:#f3ece4;font-size:13px}
+.topbar-inner{display:flex;justify-content:space-between;gap:16px;padding:9px 20px;flex-wrap:wrap}
+.topbar a{color:#f3ece4}
+
+/* notice */
+.notice-bar{background:var(--wood);color:#fff;font-size:14px;text-align:center;padding:10px 20px}
+
+/* header */
+.site-header{background:#fff;border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 20px}
+.site-title{display:flex;align-items:center;gap:12px}
+.brand-mark{width:46px;height:46px;display:grid;place-items:center;background:var(--wood);color:#fff;border-radius:12px;font-family:Georgia,serif;font-size:24px;font-weight:700}
+.brand-text strong{display:block;font-family:Georgia,serif;font-size:20px;line-height:1.1;color:var(--ink)}
+.brand-text small{color:var(--ink-soft);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0}
+nav a{color:var(--ink);font-weight:600;font-size:15px}
+.header-cart{border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:600;color:var(--ink)}
+
+/* slider */
+.slider{position:relative;background:var(--ink)}
+.slide{position:relative;min-height:460px;display:flex;align-items:center;background:linear-gradient(120deg,#6b4320,#8a5a2b 55%,#b57b3f)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(31,26,23,.85),rgba(31,26,23,.35))}
+.slide-inner{position:relative;z-index:2;padding:70px 20px;width:100%}
+.slide-copy{max-width:620px}
+.slide .eyebrow{color:#e8c39a}
+.slide h1{color:#fff;font-size:clamp(30px,4.4vw,52px)}
+.slide p{color:#e4dbd2;font-size:18px;max-width:48ch;margin:0 0 26px}
+.slider-dots{position:absolute;bottom:22px;left:0;right:0;display:flex;justify-content:center;gap:10px;z-index:3}
+.dot{width:10px;height:10px;border-radius:999px;border:2px solid #fff;background:transparent}
+.dot.on{background:#fff}
+
+/* trust */
+.trust{border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:32px 20px;text-align:center}
+.trust-grid strong{display:block;font-family:Georgia,serif;font-size:20px;color:var(--wood-dark)}
+.trust-grid span{font-size:14px;color:var(--ink-soft)}
+
+/* categories */
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.category-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;display:block}
+.category-media{display:block;height:180px;background:linear-gradient(135deg,#e9d9c6,#d8c1a4)}
+.category-card:nth-child(2) .category-media{background:linear-gradient(135deg,#dcc7ae,#c2a180)}
+.category-card:nth-child(3) .category-media{background:linear-gradient(135deg,#e5d2ba,#cbb08d)}
+.category-card:nth-child(4) .category-media{background:linear-gradient(135deg,#d9c3a6,#bfa07c)}
+.category-card:nth-child(5) .category-media{background:linear-gradient(135deg,#eadcc9,#d4bb9c)}
+.category-card:nth-child(6) .category-media{background:linear-gradient(135deg,#dfcbb1,#c6a884)}
+.category-body{display:flex;justify-content:space-between;align-items:center;padding:18px 20px}
+.category-body strong{font-size:17px}
+.category-body small{color:var(--ink-soft)}
+
+/* products */
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.product{border:1px solid var(--line);border-radius:var(--radius);padding:14px;background:#fff;position:relative}
+.product-thumb{height:200px;border-radius:10px;background:linear-gradient(140deg,#e9d9c6,#d0b593);margin-bottom:12px;position:relative}
+.badges{position:absolute;top:26px;left:26px;display:flex;flex-direction:column;gap:6px}
+.pbadge{padding:3px 10px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;color:#fff}
+.pbadge-sale{background:#c0392b}.pbadge-new{background:#2c7a4b}.pbadge-hot{background:#d97706}
+.product h3{font-size:16px;margin:0 0 6px}
+.price{color:var(--wood-dark);font-weight:700}
+.price del{color:#a99c90;font-weight:400;margin-left:6px}
+.addbtn{display:inline-block;background:var(--wood);color:#fff;border-radius:999px;padding:9px 18px;margin-top:10px;font-size:14px;font-weight:600}
+
+/* factory */
+.factory{background:var(--ink);color:#e8ded4;padding:80px 0}
+.factory-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.factory-art{min-height:340px;border-radius:20px;background:linear-gradient(150deg,#8a5a2b,#4a2d16);display:flex;align-items:flex-end;justify-content:space-between;padding:26px;position:relative}
+.factory-art::before{content:"";position:absolute;inset:16px;border:2px solid rgba(255,255,255,.22);border-radius:14px}
+.factory-art span{position:relative;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#f0d9bd}
+.factory-art b{position:relative;font-family:Georgia,serif;font-size:64px;color:rgba(255,255,255,.18);line-height:1}
+.factory h2{color:#fff;font-size:clamp(26px,3vw,40px)}
+.factory p{color:#cbbfb3}
+.factory .eyebrow{color:#d9a35b}
+.factory ul{list-style:none;padding:0;margin:22px 0;display:grid;gap:12px}
+.factory li{padding-left:28px;position:relative;color:#e0d4c7}
+.factory li::before{content:"\2713";position:absolute;left:0;top:2px;width:18px;height:18px;display:grid;place-items:center;border-radius:999px;background:#8a5a2b;color:#fff;font-size:11px}
+.factory .addr{padding:14px 18px;border-left:3px solid #8a5a2b;background:rgba(255,255,255,.04);border-radius:8px;color:#e8ded4}
+
+/* offer */
+.offer{background:linear-gradient(100deg,#6b4320,#8a5a2b 60%,#b57b3f);color:#fff;padding:16px 0}
+.offer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.offer h3{color:#fff;margin:0 0 4px;font-size:22px}
+.offer p{margin:0;color:#f2ddc6;font-size:15px}
+.timer{display:flex;gap:10px}
+.unit{min-width:64px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:8px 10px;text-align:center}
+.unit b{display:block;font-family:Georgia,serif;font-size:24px;line-height:1.1}
+.unit i{font-style:normal;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#f0d9bd}
+
+/* testimonials */
+.testi{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.testi figure{margin:0;padding:26px 24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--cream);display:flex;flex-direction:column;gap:14px}
+.stars{color:#e0a437;letter-spacing:2px}
+.stars .off{color:#d9cfc4}
+.testi blockquote{margin:0;font-size:15px;line-height:1.7;color:var(--ink-soft)}
+.testi figcaption{display:flex;align-items:center;gap:12px;margin-top:auto}
+.avatar{width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:var(--wood);color:#fff;font-family:Georgia,serif;font-size:18px}
+.testi strong{font-size:15px;display:block}
+.testi small{font-size:13px;color:var(--ink-soft)}
+
+/* cta */
+.cta{background:linear-gradient(100deg,#f2e7db,#faf6f1)}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.cta p{color:var(--ink-soft);margin:0;max-width:60ch}
+
+/* footer */
+footer{background:#171310;color:#cbbfb3;padding-top:56px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:32px;padding-bottom:40px}
+footer h3{color:#fff;font-size:18px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:8px}
+footer a{color:#d9cfc4}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:20px;font-size:13px;text-align:center}
+
+/* floats */
+.floats{position:fixed;right:18px;bottom:22px;display:flex;flex-direction:column;gap:10px;z-index:99}
+.fbtn{width:50px;height:50px;border-radius:999px;display:grid;place-items:center;color:#fff;font-size:20px;box-shadow:0 12px 26px rgba(31,26,23,.24)}
+.f-wish{background:#c0392b}.f-wa{background:#25d366}.f-top{background:var(--wood)}
+
+/* palette */
+.palette{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.sw{width:110px;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:12px;text-align:center}
+.sw i{display:block;height:56px}
+.sw span{display:block;padding:6px;color:var(--ink-soft)}
+
+@media(max-width:1024px){.products{grid-template-columns:repeat(2,1fr)}.testi{grid-template-columns:repeat(2,1fr)}.category-grid{grid-template-columns:repeat(2,1fr)}.factory-inner{grid-template-columns:1fr}.trust-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}nav ul{display:none}}
+@media(max-width:640px){.products,.testi,.category-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">📐 <strong>THeme Preview</strong> — ei file ta WordPress chara browser e khulei puro design dekhte parben</div>
+
+<div class="topbar"><div class="container topbar-inner">
+<span><strong>চট্টগ্রাম</strong> · নিজস্ব স'মিল</span>
+<span><a href="#">01814-116643</a> &nbsp;·&nbsp; <a href="#">Facebook</a></span>
+</div></div>
+
+<div class="notice-bar">★ ঈদ অফার: সব কাস্টম দরজায় ১৫% ছাড় — এই মাসের শেষ পর্যন্ত</div>
+
+<header class="site-header"><div class="container header-inner">
+<a class="site-title" href="#"><span class="brand-mark">R</span><span class="brand-text"><strong>রাবেয়া ফার্নিচার</strong><small>Furniture &amp; Door</small></span></a>
+<nav><ul><li><a href="#">শপ</a></li><li><a href="#">কাস্টম অর্ডার</a></li><li><a href="#">আমাদের কথা</a></li><li><a href="#">যোগাযোগ</a></li></ul></nav>
+<a class="header-cart" href="#">🛒 <span>2</span></a>
+</div></header>
+
+<section class="slider">
+<div class="slide"><div class="slide-inner container"><div class="slide-copy">
+<p class="eyebrow">নতুন কালেকশন</p>
+<h1>দরজা ও ফার্নিচার, কথামতো কাজ</h1>
+<p>সেগুন মেইন ডোর থেকে খোদাই আলমারি — হালিশহরের মিলে কাটা, শোরুমে দেখে নিন, বাসায় তুলে দেব।</p>
+<a class="btn btn-primary" href="#">কালেকশন দেখুন</a>
+<a class="btn btn-ghost" href="#" style="border-color:#fff;color:#fff">কাস্টম মাপ দিন</a>
+</div></div></div>
+<div class="slider-dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+</section>
+
+<section class="trust"><div class="container trust-grid">
+<div><strong>নিজস্ব স'মিল</strong><span>কাঠ আমরা নিজেরা কাটি</span></div>
+<div><strong>কথা = কাজ</strong><span>ডেলিভারি তারিখ যেটা বলি</span></div>
+<div><strong>ফ্রি ফিটিং</strong><span>চট্টগ্রাম শহরে</span></div>
+<div><strong>হাতে খোদাই</strong><span>নিজস্ব ফিনিশিং</span></div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="section-head"><h2>যা লাগবে, ক্যাটাগরি ধরে</h2><p>দরজা থেকে কিচেন — সব নিজস্ব মিলে।</p></div>
+<div class="category-grid">
+<a class="category-card" href="#"><span class="category-media"></span><span class="category-body"><strong>দরজা</strong><small>২৪ টি পণ্য</small></span></a>
+<a class="category-card" href="#"><span class="category-media"></span><span class="category-body"><strong>আলমারি</strong><small>১৮ টি পণ্য</small></span></a>
+<a class="category-card" href="#"><span class="category-media"></span><span class="category-body"><strong>খাট</strong><small>১২ টি পণ্য</small></span></a>
+<a class="category-card" href="#"><span class="category-media"></span><span class="category-body"><strong>ডাইনিং</strong><small>৯ টি পণ্য</small></span></a>
+<a class="category-card" href="#"><span class="category-media"></span><span class="category-body"><strong>লিভিং</strong><small>১৫ টি পণ্য</small></span></a>
+<a class="category-card" href="#"><span class="category-media"></span><span class="category-body"><strong>কিচেন</strong><small>৭ টি পণ্য</small></span></a>
+</div>
+</div></section>
+
+<section class="section" style="background:var(--cream)"><div class="container">
+<div class="section-head"><h2>শোরুমে যা এখন চলছে</h2><p>বেস্ট সেলিং দরজা, আলমারি, খাট ও ডাইনিং।</p></div>
+<div class="products">
+<div class="product"><div class="product-thumb"><div class="badges"><span class="pbadge pbadge-hot">Featured</span><span class="pbadge pbadge-sale">Offer</span></div></div><h3>রয়্যাল খোদাই মেইন ডোর</h3><div class="price">৳45,000 <del>৳52,000</del></div><a class="addbtn" href="#">কার্টে যোগ করুন</a></div>
+<div class="product"><div class="product-thumb"><div class="badges"><span class="pbadge pbadge-hot">Featured</span><span class="pbadge pbadge-sale">Offer</span></div></div><h3>আর্চ জ্যামিতিক মেইন ডোর</h3><div class="price">৳68,000 <del>৳75,000</del></div><a class="addbtn" href="#">কার্টে যোগ করুন</a></div>
+<div class="product"><div class="product-thumb"><div class="badges"><span class="pbadge pbadge-sale">Offer</span></div></div><h3>চার দরজার খোদাই আলমারি</h3><div class="price">৳38,500 <del>৳44,000</del></div><a class="addbtn" href="#">কার্টে যোগ করুন</a></div>
+<div class="product"><div class="product-thumb"><div class="badges"><span class="pbadge pbadge-new">New</span></div></div><h3>স্লাইডিং ফিটেড ওয়ারড্রোব</h3><div class="price">৳42,000 <del>৳48,000</del></div><a class="addbtn" href="#">কার্টে যোগ করুন</a></div>
+</div>
+</div></section>
+
+<section class="factory"><div class="container factory-inner">
+<div class="factory-art"><span>নিজস্ব স'মিল</span><b>1998</b></div>
+<div>
+<p class="eyebrow">কারখানা</p>
+<h2>হালিশহরে আমাদের স'মিল</h2>
+<p>রাবেয়া ফার্নিচার এন্ড ডোর — চট্টগ্রামের নিজস্ব স'মিলে সেগুন ও শক্ত কাঠের দরজা-ফার্নিচার তৈরি হয়। হাতে খোদাই, নিজস্ব ফিনিশিং, কথামতো ডেলিভারি।</p>
+<ul>
+<li>কাঠ আমরা নিজেরা কাটি — বাইরের বোর্ড নয়।</li>
+<li>ফিনিশিং ও ডেলিভারি তারিখ — যেটা বলি সেটাই।</li>
+<li>চট্টগ্রাম শহরে ডেলিভারি ও বসানো — আলাদা বিল নয়।</li>
+</ul>
+<p class="addr"><strong>শোরুম:</strong> হালিশহর, তাসফিয়া কমিউনিটি সেন্টার গেট, ২৫ নং রামপুর, চট্টগ্রাম</p>
+<a class="btn btn-ghost" href="#" style="border-color:#e8ded4;color:#e8ded4">আরও জানুন</a>
+</div>
+</div></section>
+
+<section class="offer"><div class="container offer-inner">
+<div><h3>ঈদ স্পেশাল অফার</h3><p>সব কাস্টম দরজা ও ডাইনিং সেটে ২৫% পর্যন্ত ছাড়।</p></div>
+<div class="timer">
+<span class="unit"><b>18</b><i>Days</i></span>
+<span class="unit"><b>06</b><i>Hours</i></span>
+<span class="unit"><b>42</b><i>Min</i></span>
+<span class="unit"><b>09</b><i>Sec</i></span>
+</div>
+</div></section>
+
+<section class="section"><div class="container cta-inner">
+<div><h2>মাপমতো দরজা, আলমারি, কিচেন</h2><p>শোরুমের ডিজাইন রাখুন, শুধু চওড়া-উচ্চতা বদলান — অথবা নিজের স্কেচ পাঠান।</p></div>
+<a class="btn btn-primary" href="#">কাস্টম রিকোয়েস্ট</a>
+</div></section>
+
+<section class="section" style="background:#fff;padding-top:0"><div class="container">
+<div class="section-head"><h2>কাস্টমার যা বলেছেন</h2><p>চট্টগ্রামের ঘরে ঘরে রাবেয়ার কাজ।</p></div>
+<div class="testi">
+<figure><div class="stars">★★★★★</div><blockquote>ভিলা প্রজেক্টের মেইন ডোর। জ্যামিতিক কাজটা একদম পরিষ্কার। চট্টগ্রামে এই মানের খোদাই সহজে মেলে না।</blockquote><figcaption><span class="avatar">M</span><span><strong>Mohammad Shawon</strong><small>চট্টগ্রাম</small></span></figcaption></figure>
+<figure><div class="stars">★★★★★</div><blockquote>খাটের হেডবোর্ডের খোদাই ছবির চেয়ে বাস্তবে আরও ভালো। মিলের লোকজন বাসায় এসে মাপ নিয়ে গেছে।</blockquote><figcaption><span class="avatar">F</span><span><strong>Farhana Akter</strong><small>হালিশহর</small></span></figcaption></figure>
+<figure><div class="stars">★★★★<span class="off">★</span></div><blockquote>ডাইনিং সেটের চেয়ারগুলো শক্ত, টেবিলের গ্রেইন সুন্দর। এক সপ্তাহ দেরি হয়েছিল, তবে মানে অভিযোগ নেই।</blockquote><figcaption><span class="avatar">K</span><span><strong>Kamrul Hasan</strong><small>পাহাড়তলী</small></span></figcaption></figure>
+<figure><div class="stars">★★★★★</div><blockquote>মেইন গেটের খোদাই দেখে অর্ডার দিয়েছিলাম। প্রতিবেশীরাও জিজ্ঞেস করছে কোথা থেকে করিয়েছি।</blockquote><figcaption><span class="avatar">N</span><span><strong>Nusrat Jahan</strong><small>নাসিরাবাদ</small></span></figcaption></figure>
+</div>
+</div></section>
+
+<section class="section" style="background:var(--cream)"><div class="container">
+<div class="section-head"><h2>Color Palette &amp; Typography</h2><p>Ei color gulo WordPress admin theke ek line CSS poriborton kore change kora jay.</p></div>
+<div class="palette">
+<div class="sw"><i style="background:#8a5a2b"></i><span>Wood<br>#8a5a2b</span></div>
+<div class="sw"><i style="background:#6b4320"></i><span>Wood Dark<br>#6b4320</span></div>
+<div class="sw"><i style="background:#1f1a17"></i><span>Ink<br>#1f1a17</span></div>
+<div class="sw"><i style="background:#faf6f1"></i><span>Cream<br>#faf6f1</span></div>
+<div class="sw"><i style="background:#e7ded4"></i><span>Line<br>#e7ded4</span></div>
+<div class="sw"><i style="background:#e0a437"></i><span>Star Gold<br>#e0a437</span></div>
+</div>
+<p style="margin-top:22px;color:var(--ink-soft)"><strong>Heading font:</strong> Georgia / Times New Roman (serif) &nbsp;·&nbsp; <strong>Body font:</strong> Segoe UI / system-ui (sans-serif)</p>
+</div></section>
+
+<footer>
+<div class="container footer-grid">
+<div><h3>রাবেয়া ফার্নিচার এন্ড ডোর</h3><p>চট্টগ্রামের নিজস্ব স'মিলে সেগুন দরজা ও ফার্নিচার। হাতে খোদাই, কথামতো ডেলিভারি।</p><a href="#">Facebook</a></div>
+<div><h3>ক্যাটাগরি</h3><ul><li><a href="#">দরজা</a></li><li><a href="#">আলমারি</a></li><li><a href="#">খাট</a></li><li><a href="#">ডাইনিং</a></li><li><a href="#">কিচেন</a></li></ul></div>
+<div><h3>লিংক</h3><ul><li><a href="#">আমাদের কথা</a></li><li><a href="#">কাস্টম অর্ডার</a></li><li><a href="#">আমার অর্ডার</a></li></ul></div>
+<div><h3>শোরুম</h3><ul><li>হালিশহর, তাসফিয়া কমিউনিটি সেন্টার গেট, ২৫ নং রামপুর, চট্টগ্রাম</li><li><a href="#">01814-116643</a></li><li><a href="#">rabeyadoorctg@gmail.com</a></li></ul></div>
+</div>
+<div class="footer-bottom">© 2026 Rabeya Furniture And Door · Chittagong</div>
+</footer>
+
+<div class="floats">
+<a class="fbtn f-wish" href="#">♡</a>
+<a class="fbtn f-wa" href="#">✉</a>
+<a class="fbtn f-top" href="#">↑</a>
+</div>
+
+</body>
+</html>
