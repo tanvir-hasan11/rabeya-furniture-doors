@@ -15,6 +15,7 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/product-specs.php';
 require get_template_directory() . '/inc/shop.php';
 require get_template_directory() . '/inc/notice.php';
+require get_template_directory() . '/inc/reviews.php';
 
 function rabeya_setup() {
 	load_theme_textdomain( 'rabeya', get_template_directory() . '/languages' );
@@ -73,6 +74,7 @@ function rabeya_scripts() {
 
 	if ( function_exists( 'is_product' ) && is_product() ) {
 		wp_enqueue_style( 'rabeya-product', get_template_directory_uri() . '/assets/css/product.css', array( 'rabeya-main' ), RABEYA_VERSION );
+		wp_enqueue_style( 'rabeya-reviews', get_template_directory_uri() . '/assets/css/reviews.css', array( 'rabeya-main' ), RABEYA_VERSION );
 	}
 
 	if ( function_exists( 'is_woocommerce' ) && ( is_shop() || is_product_category() || is_product_tag() ) ) {
