@@ -62,6 +62,20 @@ get_template_part( 'template-parts/slider' );
 </section>
 <?php endif; ?>
 
+<?php get_template_part( 'template-parts/offer-strip' ); ?>
+
+<?php if ( function_exists( 'wc_get_products' ) ) : ?>
+<section class="section bestsellers">
+	<div class="container">
+		<header class="section-head">
+			<h2><?php esc_html_e( 'On sale right now', 'rabeya' ); ?></h2>
+			<p><?php esc_html_e( 'Discounted doors, tables and storage while stock lasts.', 'rabeya' ); ?></p>
+		</header>
+		<?php echo do_shortcode( '[sale_products limit="4" columns="4"]' ); ?>
+	</div>
+</section>
+<?php endif; ?>
+
 <?php $notices = rabeya_latest_notices( 3 ); ?>
 <?php if ( $notices ) : ?>
 <section class="home-notices">
