@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Rabeya - custom order page + section cta
+   ========================================================================== */
+
+.custom-cta {
+  background: linear-gradient(100deg, #f2e7db, #faf6f1);
+}
+
+.custom-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.custom-cta h2 { margin: 0 0 6px; }
+.custom-cta p { margin: 0; color: var(--ink-soft, #5b4f46); max-width: 60ch; }
+
+.custom-order .page-sub { color: var(--ink-soft, #5b4f46); }
+
+.custom-order-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 30px;
+}
+
+.custom-order-form,
+.custom-order-info {
+  border: 1px solid var(--line, #e7ded4);
+  border-radius: var(--radius, 14px);
+  padding: 28px;
+  background: #fff;
+}
+
+.custom-order-form h2,
+.custom-order-info h2 { margin-top: 0; font-size: 22px; }
+
+.custom-form p { margin: 0 0 16px; display: flex; flex-direction: column; gap: 6px; }
+
+.custom-form label { font-weight: 600; font-size: 14px; color: var(--ink, #1f1a17); }
+
+.custom-form input,
+.custom-form select,
+.custom-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line, #e7ded4);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--cream, #faf6f1);
+}
+
+.custom-form input:focus,
+.custom-form select:focus,
+.custom-form textarea:focus {
+  outline: 2px solid var(--wood, #8a5a2b);
+  outline-offset: 1px;
+  background: #fff;
+}
+
+.custom-form .co-row { flex-direction: row; gap: 16px; }
+.custom-form .co-row span { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+
+.co-submit { margin-top: 8px !important; }
+
+.form-notice {
+  padding: 14px 18px;
+  background: #e6f4ea;
+  border-left: 4px solid #2c7a4b;
+  border-radius: 8px;
+  color: #245c3a;
+  margin-bottom: 20px;
+}
+
+.custom-contact {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.custom-contact li { color: var(--ink-soft, #5b4f46); font-size: 15px; }
+.custom-contact strong { color: var(--ink, #1f1a17); }
+.custom-contact a { color: var(--wood-dark, #6b4320); font-weight: 600; }
+
+.wa-btn { display: inline-block; background: #25d366; }
+.wa-btn:hover { background: #1eb455; }
+
+@media (max-width: 900px) {
+  .custom-order-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
+@media (max-width: 640px) {
+  .custom-form .co-row { flex-direction: column; }
+}

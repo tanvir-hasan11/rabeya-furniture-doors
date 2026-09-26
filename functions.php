@@ -18,6 +18,7 @@ require get_template_directory() . '/inc/shop.php';
 require get_template_directory() . '/inc/notice.php';
 require get_template_directory() . '/inc/reviews.php';
 require get_template_directory() . '/inc/premium.php';
+require get_template_directory() . '/inc/custom-order.php';
 
 function rabeya_setup() {
 	load_theme_textdomain( 'rabeya', get_template_directory() . '/languages' );
@@ -74,6 +75,10 @@ function rabeya_scripts() {
 	wp_enqueue_style( 'rabeya-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array( 'rabeya-main' ), RABEYA_VERSION );
 	wp_enqueue_style( 'rabeya-slider', get_template_directory_uri() . '/assets/css/slider.css', array( 'rabeya-main' ), RABEYA_VERSION );
 	wp_enqueue_style( 'rabeya-blog', get_template_directory_uri() . '/assets/css/blog.css', array( 'rabeya-main' ), RABEYA_VERSION );
+
+	if ( is_page_template( 'page-custom.php' ) ) {
+		wp_enqueue_style( 'rabeya-custom-order', get_template_directory_uri() . '/assets/css/custom-order.css', array( 'rabeya-main' ), RABEYA_VERSION );
+	}
 
 	if ( function_exists( 'is_product' ) && is_product() ) {
 		wp_enqueue_style( 'rabeya-product', get_template_directory_uri() . '/assets/css/product.css', array( 'rabeya-main' ), RABEYA_VERSION );
