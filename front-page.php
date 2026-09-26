@@ -6,27 +6,10 @@
  */
 
 get_header();
-?>
 
-<section class="hero">
-	<div class="container hero-inner">
-		<div class="hero-copy">
-			<p class="eyebrow"><?php esc_html_e( 'Since 1998', 'rabeya' ); ?></p>
-			<h1><?php esc_html_e( 'Furniture and doors that make a house a home', 'rabeya' ); ?></h1>
-			<p class="hero-lead"><?php esc_html_e( 'Seasoned teak, mahogany and garjan wood. Custom sizes for every door and every room.', 'rabeya' ); ?></p>
-			<div class="hero-actions">
-				<a class="btn btn-primary" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' ) ); ?>"><?php esc_html_e( 'Shop collection', 'rabeya' ); ?></a>
-				<a class="btn btn-ghost" href="#categories"><?php esc_html_e( 'Browse categories', 'rabeya' ); ?></a>
-			</div>
-		</div>
-		<div class="hero-art" aria-hidden="true">
-			<div class="hero-card">
-				<span class="hero-card-label"><?php esc_html_e( 'Custom doors', 'rabeya' ); ?></span>
-				<span class="hero-card-value"><?php esc_html_e( 'Made to measure', 'rabeya' ); ?></span>
-			</div>
-		</div>
-	</div>
-</section>
+// Banner slider (managed from Appearance -> Customize -> Rabeya Slider).
+get_template_part( 'template-parts/slider' );
+?>
 
 <section class="trust">
 	<div class="container trust-grid">

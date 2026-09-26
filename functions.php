@@ -11,6 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'RABEYA_VERSION', '1.0.0' );
 
+require get_template_directory() . '/inc/customizer.php';
+
 function rabeya_setup() {
 	load_theme_textdomain( 'rabeya', get_template_directory() . '/languages' );
 
@@ -63,7 +65,13 @@ add_action( 'widgets_init', 'rabeya_widgets_init' );
 function rabeya_scripts() {
 	wp_enqueue_style( 'rabeya-style', get_stylesheet_uri(), array(), RABEYA_VERSION );
 	wp_enqueue_style( 'rabeya-main', get_template_directory_uri() . '/assets/css/main.css', array( 'rabeya-style' ), RABEYA_VERSION );
+	wp_enqueue_style( 'rabeya-slider', get_template_directory_uri() . '/assets/css/slider.css', array( 'rabeya-main' ), RABEYA_VERSION );
+
 	wp_enqueue_script( 'rabeya-main', get_template_directory_uri() . '/assets/js/main.js', array(), RABEYA_VERSION, true );
+
+	if ( is_front_page() ) {
+		wp_enqueue_script( 'rabeya-slider', get_template_directory_uri() . '/assets/js/slider.js', array(), RABEYA_VERSION, true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'rabeya_scripts' );
 
