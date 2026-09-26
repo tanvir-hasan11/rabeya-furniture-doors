@@ -11,11 +11,14 @@
 	<div class="container footer-grid">
 		<div class="footer-col">
 			<h3><?php bloginfo( 'name' ); ?></h3>
-			<p><?php esc_html_e( 'Handcrafted furniture and doors made with seasoned wood, built to last for generations.', 'rabeya' ); ?></p>
+			<p><?php esc_html_e( 'চট্টগ্রামের নিজস্ব স\'মিলে সেগুন দরজা ও ফার্নিচার। হাতে খোদাই, কথামতো ডেলিভারি।', 'rabeya' ); ?></p>
+			<?php if ( rabeya_info( 'facebook' ) ) : ?>
+				<a class="footer-social" href="<?php echo esc_url( rabeya_info( 'facebook' ) ); ?>" target="_blank" rel="noopener">Facebook</a>
+			<?php endif; ?>
 		</div>
 
 		<div class="footer-col">
-			<h3><?php esc_html_e( 'Shop', 'rabeya' ); ?></h3>
+			<h3><?php esc_html_e( 'ক্যাটাগরি', 'rabeya' ); ?></h3>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'footer',
@@ -33,11 +36,12 @@
 		</div>
 
 		<div class="footer-col">
-			<h3><?php esc_html_e( 'Contact', 'rabeya' ); ?></h3>
+			<h3><?php esc_html_e( 'শোরুম', 'rabeya' ); ?></h3>
 			<ul class="footer-contact">
-				<li><?php esc_html_e( 'Showroom: Dhaka, Bangladesh', 'rabeya' ); ?></li>
-				<li><a href="mailto:info@rabeyafurniture.com">info@rabeyafurniture.com</a></li>
-				<li><a href="tel:+8801000000000">+880 1000-000000</a></li>
+				<li><?php echo esc_html( rabeya_info( 'address' ) ); ?></li>
+				<li><a href="tel:<?php echo esc_attr( rabeya_info( 'phone_raw' ) ); ?>"><?php echo esc_html( rabeya_info( 'phone' ) ); ?></a></li>
+				<li><a href="mailto:<?php echo esc_attr( rabeya_info( 'email' ) ); ?>"><?php echo esc_html( rabeya_info( 'email' ) ); ?></a></li>
+				<li><?php echo esc_html( rabeya_info( 'hours' ) ); ?></li>
 			</ul>
 		</div>
 	</div>

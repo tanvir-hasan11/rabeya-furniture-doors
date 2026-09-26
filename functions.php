@@ -11,6 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'RABEYA_VERSION', '1.0.0' );
 
+require get_template_directory() . '/inc/site-data.php';
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/product-specs.php';
 require get_template_directory() . '/inc/shop.php';
@@ -70,6 +71,7 @@ add_action( 'widgets_init', 'rabeya_widgets_init' );
 function rabeya_scripts() {
 	wp_enqueue_style( 'rabeya-style', get_stylesheet_uri(), array(), RABEYA_VERSION );
 	wp_enqueue_style( 'rabeya-main', get_template_directory_uri() . '/assets/css/main.css', array( 'rabeya-style' ), RABEYA_VERSION );
+	wp_enqueue_style( 'rabeya-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array( 'rabeya-main' ), RABEYA_VERSION );
 	wp_enqueue_style( 'rabeya-slider', get_template_directory_uri() . '/assets/css/slider.css', array( 'rabeya-main' ), RABEYA_VERSION );
 	wp_enqueue_style( 'rabeya-blog', get_template_directory_uri() . '/assets/css/blog.css', array( 'rabeya-main' ), RABEYA_VERSION );
 

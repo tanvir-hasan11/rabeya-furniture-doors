@@ -17,8 +17,13 @@
 
 <div class="topbar">
 	<div class="container topbar-inner">
-		<span class="topbar-item"><?php esc_html_e( 'Free delivery inside Dhaka on orders over 20,000 BDT', 'rabeya' ); ?></span>
-		<span class="topbar-item"><?php esc_html_e( 'Call: +880 1XXX-XXXXXX', 'rabeya' ); ?></span>
+		<span class="topbar-item">
+			<span class="topbar-strong"><?php echo esc_html( rabeya_info( 'city' ) ); ?></span> &middot; <?php esc_html_e( 'নিজস্ব স\'মিল', 'rabeya' ); ?>
+		</span>
+		<span class="topbar-links">
+			<a class="topbar-item" href="tel:<?php echo esc_attr( rabeya_info( 'phone_raw' ) ); ?>"><?php echo esc_html( rabeya_info( 'phone' ) ); ?></a>
+			<a class="topbar-item" href="<?php echo esc_url( rabeya_info( 'facebook' ) ); ?>" target="_blank" rel="noopener">Facebook</a>
+		</span>
 	</div>
 </div>
 
