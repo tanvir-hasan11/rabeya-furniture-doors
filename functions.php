@@ -86,6 +86,7 @@ function rabeya_scripts() {
 
 	if ( is_front_page() ) {
 		wp_enqueue_script( 'rabeya-slider', get_template_directory_uri() . '/assets/js/slider.js', array(), RABEYA_VERSION, true );
+		wp_enqueue_script( 'rabeya-offer-timer', get_template_directory_uri() . '/assets/js/offer-timer.js', array(), RABEYA_VERSION, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rabeya_scripts' );
