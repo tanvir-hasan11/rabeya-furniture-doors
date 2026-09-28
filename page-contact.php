@@ -48,13 +48,24 @@ get_header();
 			<div class="contact-form-wrap">
 				<h2><?php esc_html_e( 'মেসেজ পাঠান', 'rabeya' ); ?></h2>
 
-				<?php if ( isset( $_GET['contact_sent'] ) && '1' === $_GET['contact_sent'] ) : ?>
+			<?php if ( isset( $_GET['sent'] ) ) : ?>
+				<?php if ( '1' === $_GET['sent'] ) : ?>
 					<div class="form-notice"><?php esc_html_e( 'ধন্যবাদ! আমরা শীঘ্রই যোগাযোগ করব।', 'rabeya' ); ?></div>
+				<?php elseif ( 'mail_fail' === $_GET['sent'] ) : ?>
+					<div class="form-notice form-error"><?php esc_html_e( 'মেসেজ সংরক্ষিত হয়েছে কিন্তু ইমেইল পাঠানো যায়নি।', 'rabeya' ); ?></div>
+				<?php elseif ( 'spam' === $_GET['sent'] ) : ?>
+					<div class="form-notice form-error"><?php esc_html_e( 'অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।', 'rabeya' ); ?></div>
+				<?php elseif ( 'invalid' === $_GET['sent'] ) : ?>
+					<div class="form-notice form-error"><?php esc_html_e( 'সব প্রয়োজনীয় তথ্য সঠিকভাবে পূরণ করুন।', 'rabeya' ); ?></div>
+				<?php else : ?>
+					<div class="form-notice form-error"><?php esc_html_e( 'কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।', 'rabeya' ); ?></div>
 				<?php endif; ?>
+			<?php endif; ?>
 
 				<form class="contact-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 					<input type="hidden" name="action" value="rabeya_contact">
 					<?php wp_nonce_field( 'rabeya_contact', 'rabeya_contact_nonce' ); ?>
+					<div style="position:absolute;left:-9999px;" aria-hidden="true"><input type="text" name="rabeya_website" tabindex="-1" autocomplete="off"></div>
 
 					<p>
 						<label for="ct-name"><?php esc_html_e( 'আপনার নাম', 'rabeya' ); ?> *</label>

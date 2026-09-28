@@ -78,7 +78,7 @@
 
 		body.innerHTML = '<p class="wish-loading">' + ( labels.loading || '' ) + '</p>';
 
-		ajax( cfg.ajaxUrl, { action: 'rabeya_wishlist_items', ids: list.join( ',' ) } ).then( function ( res ) {
+		ajax( cfg.ajaxUrl, { action: 'rabeya_wishlist_items', ids: list.join( ',' ), nonce: cfg.nonce } ).then( function ( res ) {
 			if ( res && res.success && res.data && res.data.html ) {
 				body.innerHTML = res.data.html;
 				syncUI();
@@ -146,7 +146,7 @@
 		qv.setAttribute( 'aria-hidden', 'false' );
 		qvContent.innerHTML = '<p class="qv-loading">' + ( labels.loading || '' ) + '</p>';
 
-		ajax( cfg.ajaxUrl, { action: 'rabeya_quick_view', product_id: id } ).then( function ( res ) {
+		ajax( cfg.ajaxUrl, { action: 'rabeya_quick_view', product_id: id, nonce: cfg.nonce } ).then( function ( res ) {
 			if ( res && res.success && res.data && res.data.html ) {
 				qvContent.innerHTML = res.data.html;
 				syncUI();
@@ -260,7 +260,30 @@
 		onScroll();
 		initReveal();
 
-		// WooCommerce updates the loop via AJAX - resync after.
+		var stickyBtn = document.querySelector( '.sticky-cart-btn' );
+		if ( stickyBtn ) {
+			stickyBtn.addEventListener( 'click', function( event ) {
+				event.preventDefault();
+				var form = document.querySelector( 'form.cart' );
+				if ( ! form ) { return; }
+				var qtyInput = form.querySelector( 'input.qty' );
+				if ( qtyInput && parseInt( qtyInput.value, 10 ) < 1 ) {
+					qtyInput.value = 1;
+				}
+				var variationMissing = form.querySelector( '.woocommerce-variation-add-to-cart-disabled' );
+				if ( variationMissing ) {
+					toast( labels.error || 'Please select options first.' );
+					return;
+				}
+				if ( window.jQuery ) {
+					window.jQuery( form ).find( '[name="add-to-cart"]' ).trigger( 'click' );
+				} else {
+					var atcBtn = form.querySelector( '[type="submit"]' );
+					if ( atcBtn ) { atcBtn.click(); }
+				}
+			} );
+		}
+
 		if ( window.jQuery ) {
 			window.jQuery( document.body ).on( 'updated_wc_div updated_cart_totals wc_fragments_refreshed', syncUI );
 		}

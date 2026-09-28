@@ -18,7 +18,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return string
  */
 function rabeya_whatsapp_number() {
-	$number = get_theme_mod( 'rabeya_whatsapp', '8801000000000' );
+	$number = rabeya_info( 'whatsapp' );
+	if ( '' === $number ) {
+		$number = get_theme_mod( 'rabeya_whatsapp', '8801000000000' );
+	}
 	return preg_replace( '/[^0-9]/', '', (string) $number );
 }
 
@@ -55,6 +58,7 @@ function rabeya_premium_assets() {
 
 	wp_localize_script( 'rabeya-premium', 'rabeyaPremium', array(
 		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+		'nonce'   => wp_create_nonce( 'rabeya_premium_ajax' ),
 		'labels'  => array(
 			'added'    => __( 'Added to wishlist', 'rabeya' ),
 			'removed'  => __( 'Removed from wishlist', 'rabeya' ),
@@ -174,6 +178,8 @@ add_action( 'woocommerce_after_add_to_cart_button', 'rabeya_single_wishlist_butt
  * Return the quick view HTML for a product.
  */
 function rabeya_ajax_quick_view() {
+	check_ajax_referer( 'rabeya_premium_ajax', 'nonce' );
+
 	$id = isset( $_GET['product_id'] ) ? absint( $_GET['product_id'] ) : 0;
 
 	if ( ! $id || ! function_exists( 'wc_get_product' ) ) {
@@ -182,7 +188,7 @@ function rabeya_ajax_quick_view() {
 
 	$product = wc_get_product( $id );
 
-	if ( ! $product ) {
+	if ( ! $product || ! $product->is_visible() ) {
 		wp_send_json_error( array( 'message' => __( 'Product not found.', 'rabeya' ) ) );
 	}
 
@@ -236,6 +242,7 @@ add_action( 'wp_ajax_nopriv_rabeya_quick_view', 'rabeya_ajax_quick_view' );
  * Return rendered mini cards for the given product ids.
  */
 function rabeya_ajax_wishlist_items() {
+	check_ajax_referer( 'rabeya_premium_ajax', 'nonce' );
 	$raw = isset( $_GET['ids'] ) ? sanitize_text_field( wp_unslash( $_GET['ids'] ) ) : '';
 	$ids = array_filter( array_map( 'absint', explode( ',', $raw ) ) );
 
@@ -295,7 +302,7 @@ function rabeya_sticky_add_to_cart() {
 				<strong><?php echo esc_html( wp_trim_words( $product->get_name(), 5 ) ); ?></strong>
 				<span class="sticky-cart-price"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>
 			</span>
-			<a class="btn btn-primary sticky-cart-btn" href="#product-add"><?php esc_html_e( 'Add to cart', 'rabeya' ); ?></a>
+			<a class="btn btn-primary sticky-cart-btn" href="#tab-title-description"><?php esc_html_e( 'Add to cart', 'rabeya' ); ?></a>
 		</div>
 	</div>
 	<?php

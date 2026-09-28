@@ -84,7 +84,7 @@ get_template_part( 'template-parts/slider' );
 			<h2><?php esc_html_e( 'মাপমতো দরজা, আলমারি, কিচেন', 'rabeya' ); ?></h2>
 			<p><?php esc_html_e( 'শোরুমের ডিজাইন রাখুন, শুধু চওড়া-উচ্চতা বদলান - অথবা নিজের স্কেচ পাঠান।', 'rabeya' ); ?></p>
 		</div>
-		<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/custom/' ) ); ?>"><?php esc_html_e( 'কাস্টম রিকোয়েস্ট', 'rabeya' ); ?></a>
+		<a class="btn btn-primary" href="<?php $custom_page = get_page_by_path( 'custom' ); echo esc_url( $custom_page ? get_permalink( $custom_page ) : home_url( '/custom/' ) ); ?>"><?php esc_html_e( 'কাস্টম রিকোয়েস্ট', 'rabeya' ); ?></a>
 	</div>
 </section>
 
@@ -118,7 +118,7 @@ get_template_part( 'template-parts/slider' );
 			<h2><?php esc_html_e( 'নিজের মাপে বানাতে চান?', 'rabeya' ); ?></h2>
 			<p><?php esc_html_e( 'চওড়া-উচ্চতা পাঠান, আমরা ২৪ ঘণ্টায় দাম জানিয়ে দেব।', 'rabeya' ); ?></p>
 		</div>
-		<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'কথা বলুন', 'rabeya' ); ?></a>
+		<a class="btn btn-primary" href="<?php $contact_page = get_page_by_path( 'contact' ); echo esc_url( $contact_page ? get_permalink( $contact_page ) : home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'কথা বলুন', 'rabeya' ); ?></a>
 	</div>
 </section>
 

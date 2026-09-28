@@ -9,16 +9,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Handle the contact form submission.
- */
 function rabeya_handle_contact() {
 	$redirect = home_url( '/contact/' );
 	if ( ! isset( $_POST['rabeya_contact_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['rabeya_contact_nonce'] ) ), 'rabeya_contact' ) ) {
-		rabeya_submission_reject( $redirect, '0' );
+		rabeya_submission_reject( $redirect, 'nonce' );
 	}
 	if ( rabeya_submission_honeypot_filled() || rabeya_submission_is_rate_limited( 'contact' ) ) {
-		rabeya_submission_reject( $redirect, '0' );
+		rabeya_submission_reject( $redirect, 'spam' );
 	}
 
 	$name    = isset( $_POST['ct_name'] ) ? sanitize_text_field( wp_unslash( $_POST['ct_name'] ) ) : '';
@@ -27,7 +24,7 @@ function rabeya_handle_contact() {
 	$message = isset( $_POST['ct_message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['ct_message'] ) ) : '';
 
 	if ( '' === $name || '' === $phone || '' === $message || ( $email && ! is_email( $email ) ) ) {
-		rabeya_submission_reject( $redirect, '0' );
+		rabeya_submission_reject( $redirect, 'invalid' );
 	}
 
 	$body = sprintf( "New contact message\n\nName: %s\nPhone: %s\nEmail: %s\n\nMessage:\n%s", $name, $phone, $email, $message );
@@ -43,13 +40,12 @@ function rabeya_handle_contact() {
 		'post_content' => $body,
 	), true );
 	if ( is_wp_error( $post_id ) ) {
-		rabeya_submission_reject( $redirect, '0' );
+		rabeya_submission_reject( $redirect, 'error' );
 	}
 	update_post_meta( $post_id, '_rabeya_inquiry_type', 'contact' );
 	update_post_meta( $post_id, '_rabeya_mail_sent', $mailed ? '1' : '0' );
 
-	// A failed mail is still retained privately for admin follow-up.
-	wp_safe_redirect( add_query_arg( 'contact_sent', $mailed ? '1' : '0', $redirect ) );
+	wp_safe_redirect( add_query_arg( 'sent', $mailed ? '1' : 'mail_fail', $redirect ) );
 	exit;
 }
 add_action( 'admin_post_rabeya_contact', 'rabeya_handle_contact' );

@@ -20,14 +20,23 @@ get_header();
 			<h2><?php esc_html_e( 'মাপ পাঠান', 'rabeya' ); ?></h2>
 
 			<?php
-			$sent = isset( $_GET['custom_sent'] ) ? sanitize_text_field( wp_unslash( $_GET['custom_sent'] ) ) : '';
+			$sent = isset( $_GET['sent'] ) ? sanitize_text_field( wp_unslash( $_GET['sent'] ) ) : '';
 			if ( '1' === $sent ) : ?>
 				<div class="form-notice"><?php esc_html_e( 'ধন্যবাদ! আমরা ২৪ ঘণ্টার মধ্যে যোগাযোগ করব।', 'rabeya' ); ?></div>
+			<?php elseif ( 'mail_fail' === $sent ) : ?>
+				<div class="form-notice form-error"><?php esc_html_e( 'রিকোয়েস্ট সংরক্ষিত হয়েছে কিন্তু ইমেইল পাঠানো যায়নি।', 'rabeya' ); ?></div>
+			<?php elseif ( 'spam' === $sent ) : ?>
+				<div class="form-notice form-error"><?php esc_html_e( 'অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।', 'rabeya' ); ?></div>
+			<?php elseif ( 'invalid' === $sent ) : ?>
+				<div class="form-notice form-error"><?php esc_html_e( 'নাম ও মোবাইল নম্বর অবশ্যই দিন।', 'rabeya' ); ?></div>
+			<?php elseif ( '' !== $sent ) : ?>
+				<div class="form-notice form-error"><?php esc_html_e( 'কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।', 'rabeya' ); ?></div>
 			<?php endif; ?>
 
 			<form class="custom-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 				<input type="hidden" name="action" value="rabeya_custom_order">
 				<?php wp_nonce_field( 'rabeya_custom_order', 'rabeya_custom_nonce' ); ?>
+				<div style="position:absolute;left:-9999px;" aria-hidden="true"><input type="text" name="rabeya_website" tabindex="-1" autocomplete="off"></div>
 
 				<p>
 					<label for="co-name"><?php esc_html_e( 'আপনার নাম', 'rabeya' ); ?> *</label>
