@@ -18,6 +18,7 @@ require get_template_directory() . '/inc/shop.php';
 require get_template_directory() . '/inc/notice.php';
 require get_template_directory() . '/inc/reviews.php';
 require get_template_directory() . '/inc/premium.php';
+require get_template_directory() . '/inc/submissions.php';
 require get_template_directory() . '/inc/custom-order.php';
 require get_template_directory() . '/inc/contact.php';
 
@@ -53,7 +54,7 @@ function rabeya_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Shop Sidebar', 'rabeya' ),
 		'id'            => 'shop-sidebar',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1\$s" class="widget %2\$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -62,7 +63,7 @@ function rabeya_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer Widgets', 'rabeya' ),
 		'id'            => 'footer-widgets',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1\$s" class="widget %2\$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -111,7 +112,7 @@ function rabeya_cart_link() {
 	$count = WC()->cart ? WC()->cart->get_cart_contents_count() : 0;
 
 	printf(
-		'<a class="header-cart" href="%1$s"><span class="cart-icon" aria-hidden="true">&#128722;</span><span class="cart-count">%2$d</span><span class="screen-reader-text">%3$s</span></a>',
+		'<a class="header-cart" href="%1\$s"><span class="cart-icon" aria-hidden="true">&#128722;</span><span class="cart-count">%2\$d</span><span class="screen-reader-text">%3\$s</span></a>',
 		esc_url( wc_get_cart_url() ),
 		(int) $count,
 		esc_html__( 'View cart', 'rabeya' )
